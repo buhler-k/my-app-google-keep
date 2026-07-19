@@ -5,10 +5,12 @@ export default function Navbar() {
     return(
         <nav>
             <div className="logo-area"> 
-                <div className="tooltip">   
+                <div className="tooltip">
+                    <span className="material-symbols-outlined hover">menu</span> 
                     <span className="tooltip-text">Main Menu</span>
                 </div>
                 <img className="logo-img" src="https://www.gstatic.com/images/branding/productlogos/keep_2026/v2/web-48dp/logo_keep_2026_color_1x_web_48dp.png" />
+                <span>KEEP</span>
             </div>
 
             <div className="search-area">
