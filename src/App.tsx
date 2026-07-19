@@ -8,7 +8,7 @@ import Notes from "./components/Notes/Notes";
 
 
 const App = () => {
-  const notes = [
+  let notes = [
     {
       id: "122",
       title: "s-title",
@@ -34,12 +34,20 @@ const App = () => {
     }
 ]
 
+const addNote = (note) => {
+  notes=[
+    ...notes,
+    note
+  ]
+  
+  console.log("notes", notes);
+}
 
   return (
     <div>
       <Navbar/>
       <Sidebar/>
-      <Form/>
+      <Form addNote={addNote} />
       <Modal/>
       <Notes notes={notes} />
     </div>

@@ -1,16 +1,20 @@
 
-import React, {useState} from "react";
+import {useState} from "react";
 
-const Note = (props) => {
+interface NoteProps {
+    id:  "55";
+    title:"my other title" ;
+    text: "my other text";
+}
 
-    useState(props.title);
-    const [title, setTitle] = useState(props.title)
+const Note = (props: NoteProps) => {
+
+    const [setTitle] = useState(props.title)
     let title= props.title;
     let text = props.text;
    const noteClickHandler = () =>{
     setTitle("changed title");
-    alert(`Title: ${title}`)
-   }
+   };
     return (
         <div className="note" id="note.id" onClick={noteClickHandler}>
                     <span className="material-symbols-outlined check-circle">check_circle</span>
@@ -64,3 +68,5 @@ const Note = (props) => {
                 </div>
     )
 }
+
+export default Note;

@@ -1,12 +1,34 @@
+import {useState} from "react";
 import './Form.css';
 
 const Form = ()=> {
-    const formClickHandler = (event) =>{
-        console.log("form is clicked on", event)
+
+    const [title, setTitle] = useState("");
+    const [text, setText] = useState("");
+
+    const titleChangeHandler = (event) => setTitle(event.target.value);
+    const textChangeHandler = (event) => setText(event.target.value);
+
+
+    const submitFormHandler =() => {
+        event.preventDefault();
+        
+        const note= {
+            id: "",
+            title,
+            text
+        };
+
+        console.log(note);
+        props.addNote(note)
+        setTitle("");
+        setText("");
     }
+    
     return (
         <div>
-            <div className="form-container inactive-form" onClick={formClickHandler}>
+            
+            {/* <div className="form-container inactive-form" onClick={formClickHandler}>
                 <form>
                 <input type="text" className="note-text" placeholder="Take a note..." />
                 <div className="form-actions">
@@ -28,12 +50,12 @@ const Form = ()=> {
             </form>
         
         
-            </div>
+            </div> */}
 
             <div className="form-container active-form">
-            <form className="form" id="form">
-                <input id="note-title" type="text" className="note-title" placeholder="Title" />
-                <input id="note-text" type="text" className="note-text" placeholder="Take a note..." />
+            <form onSubmit={submitFormHandler}className="form" id="form">
+                <input onChange={titleChangeHandler} value={title}id="note-title" type="text" className="note-title" placeholder="Title" />
+                <input onChange={textChangeHandler} value={text} id="note-text" type="text" className="note-text" placeholder="Take a note..." />
                 <div className="form-actions">
                     <div className="icons">
                         <div className="tooltip">
@@ -91,7 +113,7 @@ const Form = ()=> {
                         </div>
 
                     </div>
-                    <button className="close-btn" id="modal-btn">Close</button>
+                    <button type="submit" className="close-btn" id="modal-btn">Close</button>
                     
                     
                     
