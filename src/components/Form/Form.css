@@ -44,9 +44,9 @@
     
 }
 
-.active-form{
+/* .active-form{
     display: none;
-}
+} */
 
 .active-form form{
     display: flex;

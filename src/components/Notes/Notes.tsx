@@ -1,7 +1,11 @@
 import './Notes.css';
+import Note from './Note';
 
-export default function Note(){
+export default function Notes(){
     return (
-        <div className="notes"></div>
+        <div className="notes">
+            <Note />
+            <Note />
+        </div>
     )
 }

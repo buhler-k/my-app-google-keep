@@ -2,7 +2,7 @@ import './Form.css';
 
 export default function Form(){
     return (
-        <div className="form">
+        <div>
             <div className="form-container inactive-form">
                 <form>
                 <input type="text" className="note-text" placeholder="Take a note..." />
