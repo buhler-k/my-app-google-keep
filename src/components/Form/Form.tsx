@@ -1,9 +1,12 @@
 import './Form.css';
 
-export default function Form(){
+const Form = ()=> {
+    const formClickHandler = (event) =>{
+        console.log("form is clicked on", event)
+    }
     return (
         <div>
-            <div className="form-container inactive-form">
+            <div className="form-container inactive-form" onClick={formClickHandler}>
                 <form>
                 <input type="text" className="note-text" placeholder="Take a note..." />
                 <div className="form-actions">
@@ -98,3 +101,5 @@ export default function Form(){
         </div>
     )
 }
+
+export default Form;

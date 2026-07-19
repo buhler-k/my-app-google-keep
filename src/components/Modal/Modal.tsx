@@ -1,6 +1,6 @@
 import './Modal.css';
 
-export default function Modal(){
+const Modal = () => {
     return (
         <div className="modal">
             <div className="modal-content ">
@@ -74,3 +74,5 @@ export default function Modal(){
         </div>
     )
 }
+
+export default Modal;

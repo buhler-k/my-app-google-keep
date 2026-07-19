@@ -1,7 +1,7 @@
 import './Navbar.css';
 
 
-export default function Navbar() {
+const Navbar = () => {
     return(
         <nav>
             <div className="logo-area"> 
@@ -59,4 +59,6 @@ export default function Navbar() {
         </nav>
     );
 }
+
+export default Navbar;
 

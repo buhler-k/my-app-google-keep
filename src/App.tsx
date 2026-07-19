@@ -5,14 +5,43 @@ import Modal from "./components/Modal/Modal";
 import Notes from "./components/Notes/Notes";
 
 
-function App() {
+
+
+const App = () => {
+  const notes = [
+    {
+      id: "122",
+      title: "s-title",
+      text: "s-text"
+    },
+
+    {
+      id: "123",
+      title: "some-title",
+      text: "some-text"
+    },
+
+    {
+      id: "124",
+      title: "title",
+      text: "text"
+    },
+
+    {
+      id: "125",
+      title: "Title",
+      text: "Texttt"
+    }
+]
+
+
   return (
     <div>
       <Navbar/>
       <Sidebar/>
       <Form/>
       <Modal/>
-      <Notes/>
+      <Notes notes={notes} />
     </div>
   );
 }
