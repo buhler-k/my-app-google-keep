@@ -15,7 +15,7 @@ const Sidebar = () => {
 
     }
     const sidebarClickHandler = () => {
-        // placeholder click handler for sidebar
+       
     }
     return (
 

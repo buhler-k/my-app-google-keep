@@ -13,7 +13,7 @@ const Form = (props)=> {
         event.preventDefault();
         
         const note= {
-            id: "",
+            id: Math.random(),
             title,
             text
         };

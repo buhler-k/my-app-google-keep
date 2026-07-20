@@ -26,10 +26,15 @@ const App = () => {
 
   const addNote = (note) => {
     setNotes((prevNotes) => {
-      return [...notes,note
-      ];
-    })
-  }
+      return [...notes,note];
+    });
+  };
+
+  const deleteNote = (id) => {
+    setNotes((prevNotes) => {
+      return prevNotes.filter(note => id !== note.id)
+    });
+  };
 
   return (
     <div>
@@ -37,7 +42,7 @@ const App = () => {
       <Sidebar/>
       <Form addNote={addNote} />
       <Modal/>
-      <Notes notes={notes} />
+      <Notes notes={notes} deleteNote = {deleteNote} />
     </div>
   );
 }

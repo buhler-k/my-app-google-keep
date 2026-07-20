@@ -15,8 +15,9 @@ const Note = (props: NoteProps) => {
    const noteClickHandler = () =>{
     setTitle("changed title");
    };
+   const deleteHandler = () => props.deleteNote(props.id)
     return (
-        <div className="note" id="note.id" onClick={noteClickHandler}>
+        <div className="note" id="props.id" onClick={noteClickHandler}>
                     <span className="material-symbols-outlined check-circle">check_circle</span>
                     <div className="title">{title}</div>
                     <div className="text">{text}</div>
@@ -51,7 +52,7 @@ const Note = (props: NoteProps) => {
 
                         </div>
 
-                        <div className="tooltip archive">
+                        <div className="tooltip archive" onClick={deleteHandler}>
 
                             <span className="material-symbols-outlined hover small-icon">archive</span>
                             <span className="tooltip-text">Archive</span>
