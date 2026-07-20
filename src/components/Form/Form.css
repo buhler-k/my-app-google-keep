@@ -16,7 +16,7 @@
 }
 
 .active-form{
-    height: 24vh;
+    display: flex;
     width: 100%;
 }
 
