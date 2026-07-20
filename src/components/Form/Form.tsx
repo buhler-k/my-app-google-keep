@@ -113,7 +113,7 @@ const Form = (props)=> {
 
                         
                     ): (
-                        <div className="form-actions">
+                        <div className="form-actions inactive-actions">
                             <div className="tooltip">
                                 <span className="material-symbols-outlined hover">check_box</span>
                                 <span className="tooltip-text">New list</span>
