@@ -1,16 +1,16 @@
 
 .sidebar{
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0.2px  6px 2px rgb(60 64 67 / 15%);
     position: fixed;
     left: 0;
     top: 84px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    flex-direction: nowrap;
     margin-left: 8px;
     margin-top: 3px;
     color: #5f6368;
-    width: 60px;
-    overflow-x: hidden;
     transition: 0.5s;
     cursor: pointer;
 
@@ -20,6 +20,7 @@
     color: black;
     font-size: 0.9rem;
     margin-left: 20px;
+    padding-top: 15px;
     width: 250px;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .sidebar:hover{
-    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0.2px  6px 2px rgb(60 64 67 / 15%);
+
     background: white;
 }
 
@@ -62,6 +63,7 @@
     font-size: 0.9rem;
     margin-left: 20px;
     width: 250px;
+    height: 44px;
     white-space: nowrap;
 }
 
@@ -79,7 +81,6 @@
 
 .sidebar-item:hover{
     background-color: #f1f3f4;
-    border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
 
