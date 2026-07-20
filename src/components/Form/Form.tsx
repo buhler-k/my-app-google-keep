@@ -1,7 +1,7 @@
 import {useState} from "react";
 import './Form.css';
 
-const Form = ()=> {
+const Form = (props)=> {
 
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
@@ -18,8 +18,7 @@ const Form = ()=> {
             title,
             text
         };
-
-        console.log(note);
+        
         props.addNote(note)
         setTitle("");
         setText("");
