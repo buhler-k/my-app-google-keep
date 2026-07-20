@@ -1,19 +1,23 @@
 import {useState} from "react";
 import './Form.css';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Form = (props)=> {
+    const { edit } = props;
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
+    const [isActiveForm, setIsActiveForm] = useState(edit)
 
     const titleChangeHandler = (event) => setTitle(event.target.value);
     const textChangeHandler = (event) => setText(event.target.value);
-    const [isActiveForm, setIsActiveForm] = useState(false);
+    // const [isActiveForm, setIsActiveForm] = useState(false);
 
     const submitFormHandler =(event) => {
         event.preventDefault();
         
         const note= {
-            id: Math.random(),
+            id: uuidv4(),
             title,
             text
         };
@@ -46,7 +50,7 @@ const Form = (props)=> {
                 <input onChange={textChangeHandler} value={text} id="note-text" type="text" className="note-text" placeholder="Take a note..." />
                 {
                     isActiveForm? (
-                        <div className="form-actions">
+                        <div className="form-actions active-actions">
                             <div className="icons">
                                 <div className="tooltip">
                                     <span className="material-symbols-outlined hover small-icon">text_format</span>

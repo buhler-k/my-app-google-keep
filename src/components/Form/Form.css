@@ -33,6 +33,7 @@
     padding: 10px;
 }
 
+
 .note-title{
     border: none;
     font-size: 1rem;
@@ -42,6 +43,10 @@
 .form-actions{
     display: flex;
     
+}
+
+.active-actions{
+    height: 100px;
 }
 
 /* .active-form{

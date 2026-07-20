@@ -9,14 +9,27 @@
 
 }
 
+/* .form-container{
+    height: 160px;
+} */
+
 
 .modal .modal-content{
+    height: 160px;
     width: 600px;
     position: relative;
-    top: 40%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* #modal-title {
+    height: 65px;
+}
+
+#modal-text{
+ height: 45px;   
+} */
 
 .open-modal {
     visibility: visible;

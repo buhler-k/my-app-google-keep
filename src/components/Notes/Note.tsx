@@ -1,19 +1,24 @@
 
 import {useState} from "react";
 
-interface NoteProps {
-    id:  "55";
-    title:"my other title" ;
-    text: "my other text";
-}
+// interface NoteProps {
+//     id:  "55";
+//     title:"my other title" ;
+//     text: "my other text";
+// }
 
-const Note = (props: NoteProps) => {
+const Note = (props) => {
 
-    const [setTitle] = useState(props.title)
-    let title= props.title;
-    let text = props.text;
+
+    const {toggleModal, id} = props;
+    const [title, setTitle] =useState(props.title);
+    const [text, setText] = useState(props.text);
+    // const [setTitle] = useState(props.title)
+    // let title= props.title;
+    // let text = props.text;
    const noteClickHandler = () =>{
-    setTitle("changed title");
+    toggleModal();
+    
    };
    const deleteHandler = () => props.deleteNote(props.id)
     return (

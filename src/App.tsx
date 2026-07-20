@@ -22,6 +22,7 @@ import Notes from "./components/Notes/Notes";
 
 const App = () => {
   const [notes, setNotes] = useState(NOTES)
+  const [isModalOpen, setIsModalOpen] = useState(false);
  
 
   const addNote = (note) => {
@@ -36,13 +37,19 @@ const App = () => {
     });
   };
 
+  const toggleModal = () =>{
+    setIsModalOpen(prevState =>{
+      return !prevState
+    });
+  }
+
   return (
     <div>
       <Navbar/>
       <Sidebar/>
       <Form addNote={addNote} />
-      <Modal/>
-      <Notes notes={notes} deleteNote = {deleteNote} />
+      <Modal isModalOpen = {isModalOpen}/>
+      <Notes notes={notes} deleteNote = {deleteNote} toggleModal={toggleModal} />
     </div>
   );
 }
