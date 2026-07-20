@@ -7,16 +7,16 @@ import Notes from "./components/Notes/Notes";
 
 
  const NOTES = [
-    {
-      id: "122",
-      title: "s-title",
-      text: "some-text"
-    },
-    {
-      id: "12",
-      title: "diff-title",
-      text: "another-text"
-    },
+    // {
+    //   id: "122",
+    //   title: "s-title",
+    //   text: "some-text"
+    // },
+    // {
+    //   id: "12",
+    //   title: "diff-title",
+    //   text: "another-text"
+    // },
 
 ]
 
@@ -27,7 +27,7 @@ const App = () => {
   const addNote = (note) => {
     setNotes((prevNotes) => {
       return [...notes,note
-      ]
+      ];
     })
   }
 
