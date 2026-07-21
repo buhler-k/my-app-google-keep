@@ -27,6 +27,11 @@ const Form = (props)=> {
 
         setIsActiveForm(false);
         } else {
+            props.editNote({
+                id: selectedNote.id,
+                title,
+                text
+            })
             toggleModal()
         }
 

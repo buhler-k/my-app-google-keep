@@ -11,8 +11,6 @@ const Note = (props) => {
 
 
     const {toggleModal, note, setSelectedNote} = props;
-    const [title, setTitle] =useState(note.title);
-    const [text, setText] = useState(note.text);
     // const [setTitle] = useState(props.title)
     // let title= props.title;
     // let text = props.text;
@@ -25,8 +23,8 @@ const Note = (props) => {
     return (
         <div className="note" id="props.id" onClick={noteClickHandler}>
                     <span className="material-symbols-outlined check-circle">check_circle</span>
-                    <div className="title">{title}</div>
-                    <div className="text">{text}</div>
+                    <div className="title">{note.title}</div>
+                    <div className="text">{note.text}</div>
 
                     <div className="note-footer">
 
