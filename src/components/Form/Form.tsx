@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const Form = (props)=> {
-    const { edit, selectedNote } = props;
+    const { edit, selectedNote, toggleModal } = props;
     const [title, setTitle] = useState(edit && selectedNote.title || "");
     const [text, setText] = useState(edit && selectedNote.text || "");
     const [isActiveForm, setIsActiveForm] = useState(edit)
@@ -15,17 +15,25 @@ const Form = (props)=> {
 
     const submitFormHandler =(event) => {
         event.preventDefault();
-        
-        const note= {
+
+        if(!edit) {
+            const note= {
             id: uuidv4(),
             title,
             text
         };
         
-        props.addNote(note)
+        props.addNote(note);
+
+        setIsActiveForm(false);
+        } else {
+            toggleModal()
+        }
+
         setTitle("");
         setText("");
-    }
+        
+    };
 
     const formClickHandler = () =>{
         setIsActiveForm(true);

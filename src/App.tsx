@@ -52,7 +52,7 @@ const App = () => {
       <Form addNote={addNote} />
       <Notes notes={notes} deleteNote = {deleteNote} toggleModal={toggleModal} setSelectedNote = {setSelectedNote}/>
       {
-        isModalOpen && (<Modal isModalOpen = {isModalOpen} selectedNote={selectedNote}/>)
+        isModalOpen && (<Modal isModalOpen = {isModalOpen} selectedNote={selectedNote} toggleModal={toggleModal}/>)
       }
     </div>
   );

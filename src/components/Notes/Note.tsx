@@ -21,7 +21,7 @@ const Note = (props) => {
     setSelectedNote(note)
     
    };
-   const deleteHandler = () => props.deleteNote(note.id)
+   const deleteHandler = () => props.deleteNote(note.id);
     return (
         <div className="note" id="props.id" onClick={noteClickHandler}>
                     <span className="material-symbols-outlined check-circle">check_circle</span>
