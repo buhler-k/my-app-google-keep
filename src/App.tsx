@@ -12,14 +12,20 @@ interface Note {
   text: string;
 }
 
-const NOTES: Note[] = [];
+// const NOTES: Note[] = [];
 
 const App = () => {
-  const [notes, setNotes] = useState<Note[]>(NOTES)
+  const [notes, setNotes] = useState<Note[]>(() =>{
+    const saved = localStorage.getItem('notes-app-data');
+    return saved? JSON.parse(saved) : [];
+  });
   const [selectedNote, setSelectedNote] = useState<Note | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [noteSearch, setNoteSearch] = useState("");
+  useEffect(()=>{
+    localStorage.setItem('notes-app-data' , JSON.stringify(notes));
+  }, [notes]);
 
   const handleSearch = (text: string) => {
     setNoteSearch (text);
