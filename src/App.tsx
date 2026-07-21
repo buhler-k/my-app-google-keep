@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Form from "./components/Form/Form";
 import Modal from "./components/Modal/Modal";
 import Notes from "./components/Notes/Notes";
+import './responsive.css';
 
 
  const NOTES = [

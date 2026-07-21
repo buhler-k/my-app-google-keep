@@ -58,53 +58,53 @@ const Form = (props)=> {
 
                                 </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">palette</span>
-                                <span className="tooltip-text">Background options</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">palette</span>
+                                    <span className="tooltip-text">Background options</span>
 
-                            </div>
+                                </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">add_alert</span>
-                                <span className="tooltip-text">Remind me</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">add_alert</span>
+                                    <span className="tooltip-text">Remind me</span>
 
-                            </div>
+                                </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">person_add</span>
-                                <span className="tooltip-text">Collaborator</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">person_add</span>
+                                    <span className="tooltip-text">Collaborator</span>
 
-                            </div>
+                                 </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">image</span>
-                                <span className="tooltip-text">Add image</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">image</span>
+                                    <span className="tooltip-text">Add image</span>
 
-                            </div>
+                                </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">archive</span>
-                                <span className="tooltip-text">Archive</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">archive</span>
+                                    <span className="tooltip-text">Archive</span>
 
-                            </div>
+                                </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">more_vert</span>
-                                <span className="tooltip-text">More</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">more_vert</span>
+                                    <span className="tooltip-text">More</span>
 
-                            </div>
+                                </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">undo</span>
-                                <span className="tooltip-text">Undo</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">undo</span>
+                                    <span className="tooltip-text">Undo</span>
 
-                            </div>
+                                </div>
 
-                            <div className="tooltip">
-                                <span className="material-symbols-outlined hover small-icon">redo</span>
-                                <span className="tooltip-text">Redo</span>
+                                <div className="tooltip">
+                                    <span className="material-symbols-outlined hover small-icon">redo</span>
+                                    <span className="tooltip-text">Redo</span>
 
-                            </div>
+                                </div>
 
                             </div>
                             <button type="submit" className="close-btn" id="modal-btn">Close</button>

@@ -1,0 +1,63 @@
+/* mobile */
+@media (max-width: 425px){
+    nav {
+        display: flex;
+        position: fixed;
+        top: 0px;
+        background: white;
+        z-index: 1; 
+    }
+
+    .search-area{
+        background: none;
+        width: 63px !important;
+        visibility: hidden;
+
+    }
+
+    .search-area .tooltip{
+        visibility: visible;
+        
+    }
+
+    .search-area input{
+        visibility: hidden;
+        width: 0;
+
+    }
+
+    .settings-area{
+        margin-left: -25px;
+    }
+
+    .form-container {
+        display: flex;
+        position: relative;
+        left: 30px;
+        top: 40px;
+        flex-direction: column;
+        width: 80vw !important;
+    }
+
+    .active-actions .material-symbols-outlined{
+        font-size: 11px;
+    }
+
+    #modal-btn{
+        font-size: 11px;
+        padding-bottom: 5px;
+    }
+
+
+}
+
+
+
+
+
+
+/* tablet */
+
+
+
+/* laptop */
