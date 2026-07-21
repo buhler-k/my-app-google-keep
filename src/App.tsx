@@ -23,6 +23,7 @@ import './responsive.css';
 
 const App = () => {
   const [notes, setNotes] = useState(NOTES)
+  const [selectedNote, setSelectedNote] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
  
 
@@ -49,8 +50,10 @@ const App = () => {
       <Navbar/>
       <Sidebar/>
       <Form addNote={addNote} />
-      <Modal isModalOpen = {isModalOpen}/>
-      <Notes notes={notes} deleteNote = {deleteNote} toggleModal={toggleModal} />
+      <Notes notes={notes} deleteNote = {deleteNote} toggleModal={toggleModal} setSelectedNote = {setSelectedNote}/>
+      {
+        isModalOpen && (<Modal isModalOpen = {isModalOpen} selectedNote={selectedNote}/>)
+      }
     </div>
   );
 }

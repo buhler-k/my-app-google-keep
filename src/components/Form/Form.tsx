@@ -4,9 +4,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const Form = (props)=> {
-    const { edit } = props;
-    const [title, setTitle] = useState("");
-    const [text, setText] = useState("");
+    const { edit, selectedNote } = props;
+    const [title, setTitle] = useState(edit && selectedNote.title || "");
+    const [text, setText] = useState(edit && selectedNote.text || "");
     const [isActiveForm, setIsActiveForm] = useState(edit)
 
     const titleChangeHandler = (event) => setTitle(event.target.value);

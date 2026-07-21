@@ -1,5 +1,5 @@
 
-import {useState} from "react";
+import React, {useState} from "react";
 
 // interface NoteProps {
 //     id:  "55";
@@ -10,17 +10,18 @@ import {useState} from "react";
 const Note = (props) => {
 
 
-    const {toggleModal, id} = props;
-    const [title, setTitle] =useState(props.title);
-    const [text, setText] = useState(props.text);
+    const {toggleModal, note, setSelectedNote} = props;
+    const [title, setTitle] =useState(note.title);
+    const [text, setText] = useState(note.text);
     // const [setTitle] = useState(props.title)
     // let title= props.title;
     // let text = props.text;
    const noteClickHandler = () =>{
     toggleModal();
+    setSelectedNote(note)
     
    };
-   const deleteHandler = () => props.deleteNote(props.id)
+   const deleteHandler = () => props.deleteNote(note.id)
     return (
         <div className="note" id="props.id" onClick={noteClickHandler}>
                     <span className="material-symbols-outlined check-circle">check_circle</span>

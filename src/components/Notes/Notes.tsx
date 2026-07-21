@@ -2,7 +2,7 @@ import './Notes.css';
 import Note from './Note';
 
 const Notes =(props) =>{
-    const { notes, deleteNote, toggleModal } = props;
+    const { notes, deleteNote, toggleModal, setSelectedNote } = props;
     return (
         <div className="notes">
             {notes.length ===0 ? 
@@ -16,11 +16,10 @@ const Notes =(props) =>{
                 notes.map(( note, index) =>(
                      <Note 
                      key={index}
-                     id={note.id}
-                     title={note.title}
-                     text={note.text}
+                     note={note}
                      deleteNote = {deleteNote}
                      toggleModal={toggleModal}
+                     setSelectedNote={setSelectedNote}
                      
                      />
                     ))
