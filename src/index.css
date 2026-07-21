@@ -22,20 +22,20 @@
 
 .app-dark {
     color-scheme: dark;
-    --bg: #202124;
-    --surface: #292a2d;
+    --bg: #17181a;
+    --surface: #202124;
     --text: #e8eaed;
     --text-strong: #ffffff;
     --border: #5f6368;
-    --search-bg: #525355;
+    --search-bg: #333539;
     --hover-bg: #3c4043;
     --hover-text: #ffffff;
-    --sidebar-bg: #292a2d;
+    --sidebar-bg: #202124;
     --active-bg: #665c00;
     --active-text: #ffffff;
-    --form-bg: #292a2d;
+    --form-bg: #202124;
     --form-border: #5f6368;
-    --note-bg: #292a2d;
+    --note-bg: #202124;
     --note-border: #5f6368;
     --note-footer-color: #e8eaed;
 }

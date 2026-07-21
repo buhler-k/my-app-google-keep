@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Form from "./components/Form/Form";
@@ -49,12 +49,34 @@ const App = () => {
     setIsDarkMode((prevState) => !prevState);
   };
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("app-dark", isDarkMode);
+    document.documentElement.style.colorScheme = isDarkMode ? "dark" : "light";
+  }, [isDarkMode]);
+
+  const reorderNotes = (sourceId: string, targetId: string) => {
+    setNotes((prevNotes) => {
+      const sourceIndex = prevNotes.findIndex((note) => note.id === sourceId);
+      const targetIndex = prevNotes.findIndex((note) => note.id === targetId);
+
+      if (sourceIndex < 0 || targetIndex < 0 || sourceIndex === targetIndex) {
+        return prevNotes;
+      }
+
+      const nextNotes = [...prevNotes];
+      const [movedNote] = nextNotes.splice(sourceIndex, 1);
+      nextNotes.splice(targetIndex, 0, movedNote);
+
+      return nextNotes;
+    });
+  };
+
   return (
     <div className={`app ${isDarkMode ? 'app-dark' : ''}`}>
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <Sidebar/>
       <Form addNote={addNote} />
-      <Notes notes={notes} deleteNote = {deleteNote} toggleModal={toggleModal} setSelectedNote = {setSelectedNote}/>
+      <Notes notes={notes} deleteNote={deleteNote} toggleModal={toggleModal} setSelectedNote={setSelectedNote} reorderNotes={reorderNotes} />
       {
         isModalOpen && (<Modal isModalOpen = {isModalOpen} selectedNote={selectedNote} toggleModal={toggleModal} editNote={editNote}/>)
       }

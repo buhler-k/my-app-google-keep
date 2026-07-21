@@ -1,38 +1,44 @@
-import {useState} from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import './Form.css';
 import { v4 as uuidv4 } from 'uuid';
 
+interface FormProps {
+    addNote?: (note: { id: string; title: string; text: string }) => void;
+    editNote?: (note: { id: string; title: string; text: string }) => void;
+    edit?: boolean;
+    selectedNote?: { id: string; title: string; text: string };
+    toggleModal?: () => void;
+}
 
-const Form = (props)=> {
+const Form = (props: FormProps) => {
     const { edit, selectedNote, toggleModal } = props;
-    const [title, setTitle] = useState(edit && selectedNote.title || "");
-    const [text, setText] = useState(edit && selectedNote.text || "");
-    const [isActiveForm, setIsActiveForm] = useState(edit)
+    const [title, setTitle] = useState(edit && selectedNote ? selectedNote.title : "");
+    const [text, setText] = useState(edit && selectedNote ? selectedNote.text : "");
+    const [isActiveForm, setIsActiveForm] = useState(Boolean(edit));
 
-    const titleChangeHandler = (event) => setTitle(event.target.value);
-    const textChangeHandler = (event) => setText(event.target.value);
-    // const [isActiveForm, setIsActiveForm] = useState(false);
+    const titleChangeHandler = (event: ChangeEvent<HTMLInputElement>) => setTitle(event.target.value);
+    const textChangeHandler = (event: ChangeEvent<HTMLInputElement>) => setText(event.target.value);
 
-    const submitFormHandler =(event) => {
+    const submitFormHandler = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         if(!edit) {
-            const note= {
-            id: uuidv4(),
-            title,
-            text
-        };
-        
-        props.addNote(note);
+            const note = {
+                id: uuidv4(),
+                title,
+                text
+            };
 
-        setIsActiveForm(false);
-        } else {
-            props.editNote({
+            props.addNote?.(note);
+
+            setIsActiveForm(false);
+        } else if (selectedNote) {
+            props.editNote?.({
                 id: selectedNote.id,
                 title,
                 text
-            })
-            toggleModal()
+            });
+            toggleModal?.();
         }
 
         setTitle("");
