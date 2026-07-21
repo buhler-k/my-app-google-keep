@@ -48,6 +48,30 @@
         padding-bottom: 5px;
     }
 
+    .form-actions{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #form input{
+        width: 90px;
+    }
+
+    .inactive-actions .material-symbols-outlined{
+        font-size: 22px; 
+        
+    }
+
+   .active-actions{
+        font-size: 1rem;
+        padding-left:250px;
+    }
+    .close-btn {
+        margin-left: auto;
+        padding: 6px 16px;
+        width: auto;
+    }
+
 
 }
 

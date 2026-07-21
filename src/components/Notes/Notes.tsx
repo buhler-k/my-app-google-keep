@@ -1,7 +1,14 @@
 import './Notes.css';
 import Note from './Note';
 
-const Notes =(props) =>{
+interface NotesProps {
+    notes: any[];
+    deleteNote: (note: any) => void;
+    toggleModal: () => void;
+    setSelectedNote: (note: any) => void;
+}
+
+const Notes = (props: NotesProps) =>{
     const { notes, deleteNote, toggleModal, setSelectedNote } = props;
     return (
         <div className="notes">
@@ -13,11 +20,11 @@ const Notes =(props) =>{
                 </div>
             
             ): (
-                notes.map(( note, index) =>(
+                notes.map((note: any, index: number) => (
                      <Note 
                      key={index}
                      note={note}
-                     deleteNote = {deleteNote}
+                     deleteNote={deleteNote}
                      toggleModal={toggleModal}
                      setSelectedNote={setSelectedNote}
                      

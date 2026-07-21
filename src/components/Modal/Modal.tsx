@@ -1,10 +1,17 @@
-import React, {useState} from "react";
+import {useState} from "react";
 
 import './Modal.css';
 import '../Form/Form';
 import Form from '../Form/Form';
 
-const Modal = (props) => {
+interface ModalProps {
+    isModalOpen: boolean;
+    selectedNote: any;
+    toggleModal: () => void;
+    editNote: (note: any) => void;
+}
+
+const Modal = (props: ModalProps) => {
     const {isModalOpen, selectedNote, toggleModal, editNote} = props;
 
     const [hasCursor, setHasCursor] = useState(false);

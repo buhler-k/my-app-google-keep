@@ -1,16 +1,21 @@
 
-import React, {useState} from "react";
+import React from "react";
 
-// interface NoteProps {
-//     id:  "55";
-//     title:"my other title" ;
-//     text: "my other text";
-// }
+interface NoteData {
+    id: string;
+    title: string;
+    text: string;
+}
 
-const Note = (props) => {
+interface NoteProps {
+    toggleModal: () => void;
+    note: NoteData;
+    setSelectedNote: (note: NoteData) => void;
+    deleteNote: (id: string) => void;
+}
 
-
-    const {toggleModal, note, setSelectedNote} = props;
+const Note = (props: NoteProps) => {
+    const {toggleModal, note, setSelectedNote, deleteNote} = props;
     // const [setTitle] = useState(props.title)
     // let title= props.title;
     // let text = props.text;
@@ -19,7 +24,7 @@ const Note = (props) => {
     setSelectedNote(note)
     
    };
-   const deleteHandler = () => props.deleteNote(note.id);
+    const deleteHandler = () => deleteNote(note.id);
     return (
         <div className="note" id="props.id" onClick={noteClickHandler}>
                     <span className="material-symbols-outlined check-circle">check_circle</span>

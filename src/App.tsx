@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Form from "./components/Form/Form";
@@ -6,52 +6,37 @@ import Modal from "./components/Modal/Modal";
 import Notes from "./components/Notes/Notes";
 import './responsive.css';
 
+interface Note {
+  id: string;
+  title: string;
+  text: string;
+}
 
- const NOTES = [
-    // {
-    //   id: "122",
-    //   title: "s-title",
-    //   text: "some-text"
-    // },
-    // {
-    //   id: "12",
-    //   title: "diff-title",
-    //   text: "another-text"
-    // },
-
-]
+const NOTES: Note[] = [];
 
 const App = () => {
-  const [notes, setNotes] = useState(NOTES)
-  const [selectedNote, setSelectedNote] = useState({});
+  const [notes, setNotes] = useState<Note[]>(NOTES)
+  const [selectedNote, setSelectedNote] = useState<Note | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
  
 
-  const addNote = (note) => {
+  const addNote = (note: Note) => {
+    setNotes((prevNotes) => [...prevNotes, note]);
+  };
+
+  const editNote = (editedNote: Note) => {
     setNotes((prevNotes) => {
-      return [...notes,note];
+      return prevNotes.map((note) => {
+        if (editedNote.id === note.id) {
+          return { ...note, title: editedNote.title, text: editedNote.text };
+        }
+        return note;
+      });
     });
   };
 
-  const editNote = (editedNote) =>{
-    
-
-    setNotes(prevNotes => {
-      const newArray = prevNotes.map(note => {
-        if (editedNote.id === note.id){
-        note.title = editedNote.title
-        note.text = editedNote.text
-      }
-      return note;
-    })
-    return newArray;
-    })
-  }
-
-  const deleteNote = (id) => {
-    setNotes((prevNotes) => {
-      return prevNotes.filter(note => id !== note.id)
-    });
+  const deleteNote = (id: string) => {
+    setNotes((prevNotes) => prevNotes.filter((note) => id !== note.id));
   };
 
   const toggleModal = () =>{
