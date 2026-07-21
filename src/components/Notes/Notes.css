@@ -1,5 +1,5 @@
 .no-note span{
-    color: #5f6368;
+    color: var(--text);
     font-size: 150px;
     padding-left: 95px;
 

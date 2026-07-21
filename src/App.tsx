@@ -18,7 +18,7 @@ const App = () => {
   const [notes, setNotes] = useState<Note[]>(NOTES)
   const [selectedNote, setSelectedNote] = useState<Note | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
- 
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const addNote = (note: Note) => {
     setNotes((prevNotes) => [...prevNotes, note]);
@@ -45,9 +45,13 @@ const App = () => {
     });
   }
 
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevState) => !prevState);
+  };
+
   return (
-    <div>
-      <Navbar/>
+    <div className={`app ${isDarkMode ? 'app-dark' : ''}`}>
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <Sidebar/>
       <Form addNote={addNote} />
       <Notes notes={notes} deleteNote = {deleteNote} toggleModal={toggleModal} setSelectedNote = {setSelectedNote}/>

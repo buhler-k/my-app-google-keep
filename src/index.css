@@ -1,5 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
 
+:root {
+    color-scheme: light;
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --text: #5f6368;
+    --text-strong: #202124;
+    --border: #dadce0;
+    --search-bg: #f1f3f4;
+    --hover-bg: #f1f3f4;
+    --hover-text: #000000;
+    --sidebar-bg: #ffffff;
+    --active-bg: #fef0c3;
+    --active-text: #000000;
+    --form-bg: #ffffff;
+    --form-border: #e0e1e0;
+    --note-bg: #ffffff;
+    --note-border: #e0e1e0;
+    --note-footer-color: #5f6368;
+}
+
+.app-dark {
+    color-scheme: dark;
+    --bg: #202124;
+    --surface: #292a2d;
+    --text: #e8eaed;
+    --text-strong: #ffffff;
+    --border: #5f6368;
+    --search-bg: #525355;
+    --hover-bg: #3c4043;
+    --hover-text: #ffffff;
+    --sidebar-bg: #292a2d;
+    --active-bg: #665c00;
+    --active-text: #ffffff;
+    --form-bg: #292a2d;
+    --form-border: #5f6368;
+    --note-bg: #292a2d;
+    --note-border: #5f6368;
+    --note-footer-color: #e8eaed;
+}
 
 *{
     margin: 0;
@@ -7,4 +46,17 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.app {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }

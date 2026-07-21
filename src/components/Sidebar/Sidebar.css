@@ -10,14 +10,15 @@
     flex-direction: nowrap;
     margin-left: 8px;
     margin-top: 3px;
-    color: #5f6368;
+    color: var(--text);
+    background: var(--sidebar-bg);
     transition: 0.5s;
     cursor: pointer;
 
 }
 
 .sidebar-item .sidebar-text{
-    color: black;
+    color: var(--text-strong);
     font-size: 0.9rem;
     margin-left: 20px;
     padding-top: 15px;
@@ -29,24 +30,24 @@
 }
 
 .sidebar-active-item{
-    background-color: #fef0c3;
+    background-color: var(--active-bg);
 }
 
 .sidebar:hover{
 
-    background: white;
+    background: var(--surface);
 }
 
 .active{
-    background-color: #fef0c3;
+    background-color: var(--active-bg);
     border-radius: 50%;
-    color: black;
+    color: var(--active-text);
     cursor: pointer;
 
 }
 
 .active:hover{
-    background-color: #fef0c3;
+    background-color: var(--active-bg);
 
 }
 
@@ -59,7 +60,7 @@
 }
 
 .sidebar-item .sidebar-text {
-    color: black;
+    color: var(--text-strong);
     font-size: 0.9rem;
     margin-left: 20px;
     width: 120px;
@@ -75,17 +76,17 @@
 }
 
 .sidebar-active-item{
-    background-color: #fef0c3;
+    background-color: var(--active-bg);
 }
 
 
 .sidebar-item:hover{
-    background-color: #f1f3f4;
+    background-color: var(--hover-bg);
     border-bottom-right-radius: 25px;
 }
 
 .sidebar-active-item:hover{
-    background-color: #fef0c3;
+    background-color: var(--active-bg);
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }

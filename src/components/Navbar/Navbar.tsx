@@ -1,10 +1,17 @@
 import './Navbar.css';
 
+interface NavbarProps {
+    isDarkMode: boolean;
+    toggleDarkMode: () => void;
+}
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
     return(
         <nav>
             <div className="logo-area"> 
+                <button type="button" className={`theme-toggle ${isDarkMode ? 'theme-toggle-active' : ''}`} onClick={toggleDarkMode} aria-label="Toggle dark mode">
+                    <span className="material-symbols-outlined">dark_mode</span>
+                </button>
                 <div className="tooltip">
                     <span className="material-symbols-outlined hover">menu</span> 
                     <span className="tooltip-text">Main Menu</span>
