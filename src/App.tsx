@@ -21,7 +21,7 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [noteSearch, setNoteSearch] = useState("");
 
-  const handleSearch = (text) => {
+  const handleSearch = (text: string) => {
     setNoteSearch (text);
   };
 
