@@ -88,10 +88,29 @@
 /* tablet */
 @media (max-width: 768px){
 
-    .material-symbols-outlined {
-        color: pink;
+    nav{
+        width: 100%;
     }
+    nav .material-symbols-outlined {
+        display: flex;
+        font-size: 22px;
+    }
+
+    nav .search-area{
+        width: 25vw;
+    }
+
+    nav .profile-actions-area{
+        display: flex;
+    }
+
 }
 
 
 /* laptop */
+
+@media (max-width: 1024px){
+    nav .search-area {
+        width: 45vw;
+    }
+}

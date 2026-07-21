@@ -99,6 +99,10 @@ input:focus{
     z-index: 1; 
 }
 
+.profile-actions-area .tooltip-text {
+    margin-left: -20px;
+}
+
 .tooltip{
     position: relative;
     display: inline;
@@ -114,3 +118,4 @@ input:focus{
     border-radius: 50%;
     cursor: pointer;
 }
+

@@ -77,28 +77,27 @@ const App = () => {
 
   };
 
-  const filteredNotes = notes.filter((note)=>{
-    if (!noteSearch)
-       return true;
-    const query = noeSearch,toLowerCase();
+  const filteredNotes = notes.filter((note) => {
+    if (!noteSearch) return true;
+    const query = noteSearch.toLowerCase();
+
     return (
-      note.title.toLowerCase().includes(noteSearch.toLowerCase()) ||
-      note.text.toLowerCase().includes(noteSearch.toLowerCase())
-  );
-  })}
-    
+      note.title.toLowerCase().includes(query) ||
+      note.text.toLowerCase().includes(query)
+    );
+  });
 
   return (
     <div className={`app ${isDarkMode ? 'app-dark' : ''}`}>
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} setNoteSearch={handleSearch} />
       <Sidebar/>
       <Form addNote={addNote} />
-      <Notes notes={notes} deleteNote={deleteNote} toggleModal={toggleModal} setSelectedNote={setSelectedNote} reorderNotes={reorderNotes} />
+      <Notes notes={filteredNotes} deleteNote={deleteNote} toggleModal={toggleModal} setSelectedNote={setSelectedNote} reorderNotes={reorderNotes} />
       {
         isModalOpen && (<Modal isModalOpen = {isModalOpen} selectedNote={selectedNote} toggleModal={toggleModal} editNote={editNote}/>)
       }
     </div>
   );
-}
+};
 
 export default App;
