@@ -1,11 +1,13 @@
+import React from 'react';
 import './Navbar.css';
 
 interface NavbarProps {
     isDarkMode: boolean;
     toggleDarkMode: () => void;
+    setNoteSearch:(text:string)=>void;
 }
 
-const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
+const Navbar = ({ isDarkMode, toggleDarkMode, setNoteSearch}: NavbarProps) => {
     return(
         <nav>
             <div className="logo-area"> 
@@ -25,7 +27,10 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: NavbarProps) => {
                     <span className="material-symbols-outlined hover">search</span>
                     <span className="tooltip-text">Search</span>
                 </div>
-                <input type="text" placeholder="Search" />
+                <input type="text"
+                placeholder="Search"
+                onChange={(event)=> setNoteSearch(event.target.value)}
+                />
 
 
             </div>

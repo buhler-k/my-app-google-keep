@@ -19,6 +19,11 @@ const App = () => {
   const [selectedNote, setSelectedNote] = useState<Note | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [noteSearch, setNoteSearch] = useState("");
+
+  const handleSearch = (text) => {
+    setNoteSearch (text);
+  };
 
   const addNote = (note: Note) => {
     setNotes((prevNotes) => [...prevNotes, note]);
@@ -69,11 +74,23 @@ const App = () => {
 
       return nextNotes;
     });
+
   };
+
+  const filteredNotes = notes.filter((note)=>{
+    if (!noteSearch)
+       return true;
+    const query = noeSearch,toLowerCase();
+    return (
+      note.title.toLowerCase().includes(noteSearch.toLowerCase()) ||
+      note.text.toLowerCase().includes(noteSearch.toLowerCase())
+  );
+  })}
+    
 
   return (
     <div className={`app ${isDarkMode ? 'app-dark' : ''}`}>
-      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} setNoteSearch={handleSearch} />
       <Sidebar/>
       <Form addNote={addNote} />
       <Notes notes={notes} deleteNote={deleteNote} toggleModal={toggleModal} setSelectedNote={setSelectedNote} reorderNotes={reorderNotes} />

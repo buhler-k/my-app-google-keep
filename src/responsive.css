@@ -86,7 +86,12 @@
 
 
 /* tablet */
+@media (max-width: 768px){
 
+    .material-symbols-outlined {
+        color: pink;
+    }
+}
 
 
 /* laptop */
